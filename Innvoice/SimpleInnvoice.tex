@@ -1,0 +1,77 @@
+\documentclass[DIN, pagenumber=false, parskip=half,
+               fromalign=right, fromphone=true, fromfax=false,
+               fromrule=false]{scrlttr2}
+ 
+
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{longtable}
+
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+\LoadLetterOption{template}
+
+\renewcommand*{\raggedsignature}{\raggedright} 
+
+\setkomavar{fromname}{Nicolas Mauchle}
+\setkomavar{fromphone}{888 888 88 88}
+\setkomavar{fromaddress}{Strasse \\ CH-Stadt}
+\setkomavar{frombank}{Bankenname \\ IBAN: CH64 8495 49384 393 393}
+
+\setkomavar{subject}[]{Rechnung}
+\setkomavar{yourmail}[Ihre Angebots-Nr.]{12}
+\setkomavar{yourref}[Ihre Kundennummer]{2}
+\setkomavar{date}[Datum]{09. Mai 2012}
+
+%===================================
+% footer
+\firstfoot{
+  \noindent\rule{17.5cm}{0.4pt}
+  \parbox[t]{\textwidth} {\footnotesize
+
+  \begin{tabular}[t]{l@{}}
+      Nicolas Mauchle\\
+      Strasse, Stadt\\ \\
+      Mobile: \usekomavar{fromphone} \\
+      E-Mail: nmauchle@gmail.com \\
+  \end{tabular}
+  \hfill{}
+  \begin{tabular}[t]{l@{}}
+    \usekomavar{frombank} 
+  \end{tabular}  
+ }}
+
+\begin{document}
+
+%===================================
+% receiver
+\begin{letter}{
+  Innvoice To\\
+  Streetname\\
+  City\\
+}
+
+\opening{\ }
+\vspace{-1.5cm}
+
+%===================================
+\renewcommand{\baselinestretch}{1.5}\normalsize
+\begin{longtable}{L{9cm}R{2.5cm}R{4cm}}
+  Bezeichnung & Menge & Preis\\
+  \hline
+  What was done & 2 Stunden & 0.00 CHF \\
+  Mehrwertsteuer & 8\% & 0.00 CHF\\ \hline \\
+  \multicolumn{2}{l}{\textbf{Total}} & \textbf{0.00 CHF}\\
+  \hline\hline 
+\end{longtable}
+
+\renewcommand{\baselinestretch}{1.00}\normalsize
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+
+\end{letter}
+\end{document}

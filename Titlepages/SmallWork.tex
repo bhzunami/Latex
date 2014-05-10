@@ -1,0 +1,20 @@
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\hbox{ % Horizontal box
+\hspace*{0.02\textwidth} % Whitespace to the left of the title page
+\rule{0.5pt}{\textheight} % Vertical line
+\hspace*{0.02\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{1.0\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+{\noindent\Huge\bfseries Main Title}\\[2\baselineskip] % Title
+{\Large \textit{Verantwortlich}}\\[3\baselineskip] % Tagline or further description
+{\Large \textsc{Author}}\\  % Author name
+%
+{\large \textit{Organization}}\\[4\baselineskip] 
+\today
+%
+\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+%{\noindent The Publisher \plogo}\\[\baselineskip] % Publisher and logo
+}}
+\endgroup}
